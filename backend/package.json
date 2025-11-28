@@ -31,7 +31,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "start": "node dist/index.js",
+    "start": "node dist/src/index.js",
     "dev": "nodemon",
     "dev:once": "ts-node src/index.ts",
     "test": "jest --runInBand"
