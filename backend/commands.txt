@@ -1,0 +1,16 @@
+npm test: to run tests
+npm test -- tests/db/posts.db.test.ts: to run a specific test file
+npx jest --watch: to run test in watch mode
+npm run test:posts
+npm run test:users
+
+
+"scripts": {
+  "test": "jest",
+  "test:watch": "jest --watch",
+  "test:posts": "jest tests/routes/posts.routes.test.ts",
+  "test:users": "jest tests/routes/users.routes.test.ts"
+}
+
+
+node scripts/run-migrations.js: to run migrations

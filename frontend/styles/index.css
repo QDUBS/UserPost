@@ -1,0 +1,6 @@
+@import "tailwindcss";
+@import "./loader.css";
+
+html, body {
+  background: #fff;
+}
