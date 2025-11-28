@@ -12,16 +12,7 @@
     "nodemon": "^3.1.7",
     "sqlite3": "^5.1.7",
     "swagger-jsdoc": "^6.2.8",
-    "swagger-ui-express": "^5.0.1"
-  },
-  "scripts": {
-    "build": "tsc",
-    "start": "node dist/index.js",
-    "dev": "nodemon",
-    "dev:once": "ts-node src/index.ts",
-    "test": "jest --runInBand"
-  },
-  "devDependencies": {
+    "swagger-ui-express": "^5.0.1",
     "@types/config": "^3.3.5",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.0",
@@ -37,5 +28,13 @@
     "ts-jest": "^29.4.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.2"
-  }
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "nodemon",
+    "dev:once": "ts-node src/index.ts",
+    "test": "jest --runInBand"
+  },
+  "devDependencies": {}
 }
