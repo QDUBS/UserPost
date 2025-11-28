@@ -24,7 +24,7 @@ app.use("/posts", postsRouter);
 app.use("/users", usersRouter);
 
 // Swagger UI
-app.use("/api", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // CORS middleware
 app.use(cors({ origin: process.env.FRONTEND_ORIGIN || "*" }));
