@@ -1,3 +1,1 @@
-export const AppRoutes = {
-  LOGIN: "/auth/login",
-};
+export const AppRoutes = {};
