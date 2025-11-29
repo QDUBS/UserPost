@@ -1,10 +1,11 @@
-
 import axios from "axios";
-import { APIRoutes } from "../constants/apiRoutes";
+
+const baseURL =
+  process.env.VITE_API_URL || "https://userpost-y1xm.onrender.com";
 
 export const server = async () => {
   const instance = axios.create({
-    baseURL: APIRoutes.VITE_API_URL,
+    baseURL,
     withCredentials: false,
   });
 
