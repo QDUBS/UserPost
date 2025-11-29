@@ -1,4 +1,4 @@
-# 📘 Users & Posts API
+# Users & Posts API
 
 ## 📌 Overview
 
@@ -42,14 +42,29 @@ The backend is built with Node.js + Express + TypeScript + SQLite, and the front
 ```bash
 root/
  ├── backend/
+ │    ├── config/
+ │    ├── migrations/
+ │    ├── scripts/
  │    ├── src/
  │    ├── tests/
- │    ├── migrations/
- │    └── README.md
+ │    └── .env
+ │    └── data.db
+ │    └── jest.config.js
+ │    └── nodemon.json
+ │    └── tsconfig.json
  ├── frontend/
+ │    ├── public/
  │    ├── src/
- │    └── README.md
- └── README.md  ← (this file)
+ │    ├── styles/
+ │    ├── .env
+ │    ├── App.tsx
+ │    ├── index.html
+ │    ├── main.tsx
+ │    ├── style.css
+ │    ├── tailwind.config.js
+ │    ├── style.css
+ │   README.md
+ └── .gitignore
 ```
 
 
