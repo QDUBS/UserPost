@@ -3,8 +3,8 @@ INSERT
 INTO posts(
     title,
     body,
-    userId,
-    createdAt
+    user_id,
+    created_at
 )
 VALUES (?, ?, ?, datetime('now'))
 `;

@@ -14,6 +14,6 @@ export interface CreatePost {
   data?: {
     title: string;
     body: string;
-    userId: number;
+    userId: string;
   };
 }

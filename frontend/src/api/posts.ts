@@ -20,7 +20,7 @@ export const createPost = async (payload: {
 }): Promise<Post> => {
   try {
     const api = await server();
-    const res = await api.post(`${APIRoutes.POSTS}`, payload);
+    const res = await api.post(`${APIRoutes.POSTS}`, payload); 
     return res.data;
   } catch (err: any) {
     console.error("Failed to create post:", err.message);

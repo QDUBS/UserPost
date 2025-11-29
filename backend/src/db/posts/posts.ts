@@ -17,10 +17,12 @@ export const getPosts = (userId: string): Promise<Post[]> =>
 export const createPost = (
   title: string,
   body: string,
-  userId: number
-): Promise<{ id: number }> =>
-  new Promise((resolve, reject) => {
-    connection.run(createPostTemplate, [title, body, userId], function (err) {
+  userId: string | number
+) =>
+  new Promise<{ id: number }>((resolve, reject) => {
+    const params = [title, body, userId];
+
+    connection.run(createPostTemplate, params, function (err) {
       if (err) {
         reject(err);
         return;

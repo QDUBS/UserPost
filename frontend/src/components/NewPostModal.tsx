@@ -10,23 +10,28 @@ interface Props {
 export default function NewPostModal({ open, setOpen, userId }: Props) {
   const [body, setBody] = useState("");
   const [title, setTitle] = useState("");
+  const createPost = useCreatePost(userId);
 
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const el = e.target;
 
     const MAX_HEIGHT = 600;
-
     el.style.height = "auto";
-
     const newHeight = Math.min(el.scrollHeight, MAX_HEIGHT);
     el.style.height = `${newHeight}px`;
-
     el.style.overflowY = el.scrollHeight > MAX_HEIGHT ? "auto" : "hidden";
 
     setBody(el.value);
   };
 
-  const createPost = useCreatePost(userId);
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Submitting new post with title:",userId, title, "and body:", body);
+    createPost.mutate({ userId, title, body });
+    setOpen(false);
+    setBody("");
+    setTitle("");
+  };
 
   if (!open) return null;
 
@@ -34,13 +39,7 @@ export default function NewPostModal({ open, setOpen, userId }: Props) {
     <div className="fixed inset-0 bg-black/30 flex items-center justify-center p-4">
       <form
         className="bg-white rounded-xl p-6 w-full max-w-3xl"
-        onSubmit={(e) => {
-          e.preventDefault();
-          createPost.mutate({ userId, title, body });
-          setOpen(false);
-          setBody('')
-          setTitle('')
-        }}
+        onSubmit={handleSubmit}
       >
         <h2 className="text-4xl mb-4">New post</h2>
 

@@ -28,11 +28,6 @@ export function validateCreatePost(input: ICreatePost): CreatePost {
     input.userId === ""
   ) {
     errors.userId = "userId is required";
-  } else {
-    const uid = Number(input.userId);
-    if (Number.isNaN(uid)) {
-      errors.userId = "Valid userId is required";
-    }
   }
 
   const hasErrors = Object.keys(errors).length > 0;
@@ -42,7 +37,7 @@ export function validateCreatePost(input: ICreatePost): CreatePost {
 
   const title = (input.title as string).trim();
   const body = (input.body as string).trim();
-  const userId = Number(input.userId);
+  const userId = (  input.userId as string).trim();
 
   return { valid: true, data: { title, body, userId } };
 }
