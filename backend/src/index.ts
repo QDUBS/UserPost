@@ -27,7 +27,7 @@ app.use("/users", usersRouter);
 app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // CORS middleware
-app.use(cors({ origin: process.env.FRONTEND_ORIGIN || "*" }));
+app.use(cors({ origin: "https://user-post-theta.vercel.app" }));
 
 app.listen(port, () => {
   console.log(`API server is running on port ${port}`);
