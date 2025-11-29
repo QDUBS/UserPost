@@ -26,7 +26,6 @@ router.get("/:userId", async (req: Request, res: Response) => {
   }
   try {
     const user = await getSingleUser(userId);
-    console.log("Retrieved user:", user);
     res.send(user);
   } catch (err) {
     res.status(500).send({ error: "Failed to fetch user", detail: err });
